@@ -1,5 +1,8 @@
 #include <iostream>
 #include <clocale>
+#include <cstdlib>
+#include <ctime>
+#include <fstream>
 using namespace std;
 
 bool check(char* word, char* displayWord) {
@@ -14,7 +17,12 @@ char UpCase(char c) {
 
 
 void chooseWord(char* buffer) {
-
+	srand(time(0));
+	int numword = rand() % 1001;
+	
+	ifstream our_dict("dictionary.txt");
+	our_dict >> buffer;
+	
 };
 
 int main() {
@@ -23,15 +31,18 @@ int main() {
 	bool success = false;
 	char ch;
 
-	setlocale(LC_ALL, "ru");
+
+	//setlocale(LC_ALL, "ru");
+	//system("chcp 1251");
 	chooseWord(word);
 
 	while (attempts > 0 && !success) {
-		cout << "Óãàäàéòå ñëîâî:\n";
+		cout << "“£ ¤ ©â¥ á«®¢®:\n";
 		cout << displayWord << "\n";
-		cout << "Ó âàñ " << attempts << "ïîïûòîê\n";
+		cout << "“ ¢ á " << attempts << " ¯®¯ëâ®ª\n";
 		cin >> ch;
 		ch = UpCase(ch);
+
 		attempts--;
 		success = check(word, displayWord);
 	}
