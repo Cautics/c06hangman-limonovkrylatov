@@ -19,9 +19,11 @@ char UpCase(char c) {
 void chooseWord(char* buffer) {
 	srand(time(0));
 	int numword = rand() % 1001;
-	
 	ifstream our_dict("dictionary.txt");
+	
+	// написать цикл для считывания numword-того слова в  buffer
 	our_dict >> buffer;
+	cout << buffer;
 	
 };
 
@@ -29,11 +31,12 @@ int main() {
 	int attempts = 9;
 	char word[50], displayWord[50];
 	bool success = false;
+	
 	char ch;
 
-
-	//setlocale(LC_ALL, "ru");
+    //setlocale(LC_ALL, "ru");
 	//system("chcp 1251");
+	
 	chooseWord(word);
 
 	while (attempts > 0 && !success) {
@@ -42,8 +45,8 @@ int main() {
 		cout << "У вас " << attempts << " попыток\n";
 		cin >> ch;
 		ch = UpCase(ch);
-
-		attempts--;
+		// cout <<(ch == word[2]);
+		attempts--; 
 		success = check(word, displayWord);
 	}
 }
