@@ -21,7 +21,7 @@ void chooseWord(char* buffer) {
 	int numword = rand() % 1001;
 	ifstream our_dict("dictionary.txt");
 	
-	// ­ ¯¨á âì æ¨ª« ¤«ï áç¨âë¢ ­¨ï numword-â®£® á«®¢  ¢  buffer
+	//ïèñàòü öèêë äëÿ ñ÷èòûâàíèÿ numword - òîãî ñëîâà â  buffer
 	our_dict >> buffer;
 	cout << buffer;
 	
@@ -34,15 +34,15 @@ int main() {
 	
 	char ch;
 
-    //setlocale(LC_ALL, "ru");
+    setlocale(LC_ALL, "ru");
 	//system("chcp 1251");
 	
 	chooseWord(word);
 
 	while (attempts > 0 && !success) {
-		cout << "“£ ¤ ©â¥ á«®¢®:\n";
+		cout << "Óãàäàé ñëîâî\n";
 		cout << displayWord << "\n";
-		cout << "“ ¢ á " << attempts << " ¯®¯ëâ®ª\n";
+		cout << "Ó âàñ " << attempts << " ïîïûòîê\n";
 		cin >> ch;
 		ch = UpCase(ch);
 		// cout <<(ch == word[2]);
